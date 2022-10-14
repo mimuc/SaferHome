@@ -1,0 +1,75 @@
+type ConsentForm @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userId: String!
+  accepted: Boolean!
+}
+
+type Rating {
+  userId: String
+  scale: Int
+  phase: Int
+}
+
+type Slot {
+  deviceId: String
+  slotType: SlotType!
+}
+
+type Questionnaire @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  householdId: String!
+  userId: String!
+  gender: String
+  age: Int
+  professionalBackground: String
+  ATI1: Int
+  ATI2: Int
+  ATI3: Int
+  ATI4: Int
+  ATI5: Int
+  ATI6: Int
+  ATI7: Int
+  ATI8: Int
+  ATI9: Int
+}
+
+enum SlotType {
+  WALL
+  FLOOR
+  IOTSENSOR
+  DOOR
+}
+
+enum CategoryType {
+  VOICEASSISTENT
+  TEMPERATURESENSOR
+  OTHER
+  LIGHTSENSOR
+}
+
+type Device @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  householdId: String!
+  name: String!
+  information: String
+  category: CategoryType!
+  privacyLevel: Int
+  securityLevel: Int
+  message: String
+  technologyResponsibility: [Rating]
+  ECD3: [Rating]
+  ECD4: [Rating]
+  ECD5: [Rating]
+}
+
+type Dashboard @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  householdId: String!
+  name: String
+  dashboardRow: Int
+  dashboardCol: Int
+  boardRow: Int
+  boardCol: Int
+  data: [Slot]
+}
+ 
