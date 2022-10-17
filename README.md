@@ -8,5 +8,23 @@ Private homes are increasingly becoming smart spaces. While smart homes promise 
 
 This work can be cited as follows:
 <pre>
-@inproceedings{}
+@inproceedings{
+@article{windl2022safer,
+title = {SaferHome: Interactive Physical and Digital Smart Home Dashboards for Communicating Privacy Assessments to Owners and Bystanders},
+author = {Maximiliane Windl and Alexander Hiesinger and Robin Welsch and Albrecht Schmidt and Sebastian S. Feger},
+url = {},
+doi = {10.1145/3567739},
+year = {2022},
+issue_date = {December 2022},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {6},
+number = {ISS},
+journal = {Proc. ACM Hum.-Comput. Interact.},
+month = {dec},
+articleno = {586},
+numpages = {18},
+pubstate = {forthcoming}
+}
+}
 </pre>
